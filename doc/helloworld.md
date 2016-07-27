@@ -10,9 +10,7 @@ var HelloWorld = React.createClass({
           //你可以认为这些标签就是一些标记或者数据， React知道如何处理它们
         }
       });
-```
-
-```javascript
+      
 setInterval(function() {
   React.render(
     <HelloWorld date={new Date()} />, //设置HelloWorld元素相关的属性 this.props.date = new Date();
