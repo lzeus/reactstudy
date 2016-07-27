@@ -24,6 +24,8 @@ var CommentList = React.createClass({
   }
 });
 ```
+
+需要注意的是，当组件xml中使用到js变量时，需要将变量用{}引用起来
 ## 编译后
 ```javascript
 var Comment = React.createClass({displayName: "Comment",
