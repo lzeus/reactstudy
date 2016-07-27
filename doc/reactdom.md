@@ -26,17 +26,17 @@ var root = <ul className="my-list">
 ```javascript
 var child = React.createElement('li', null, 'Text Content');
 var root = React.createElement('ul', { className: 'my-list' }, child);
-React.render(root, document.body);
+ReactDOM.render(root, document.body);
 ```
 下面为jsx形式
 ```javascript
 var root = <ul className="my-list">
              <li>Text Content</li>
            </ul>;
-React.render(root, document.body);
+ReactDOM.render(root, document.body);
 ```
 ### ReactElement的渲染
-使用 `React.render(root, document.body);`
+使用 `ReactDOM.render(root, document.body);`
 
 ## react Node
 
@@ -67,31 +67,31 @@ var MyComponent = React.createClass({
 ```javascript
 var component = new MyComponent(props); // never do this
 ```
-除非为了测试，正常情况下不要自己调用该构造函数。React 帮你调用这个函数。
+除非为了测试，正常情况下不要自己调用该构造函数。
 
-相反，把 ReactComponent 类传给 createElement，就会得到一个 ReactElement 实例。
+React 会帮你调用这个函数。
+
+- 把 ReactComponent 类传给 createElement，就会得到一个 ReactElement 实例。
 ```javascript
 var element = React.createElement(MyComponent);
 ```
-或者使用 JSX：
+- 使用 JSX：
 ```javascript
 var element = <MyComponent />;
 ```
 
-当该实例传给 React.render 的时候，React 将会调用构造函数，然后创建并返回一个 ReactComponent。
+当该实例传给 ReactDOM.render 的时候，React 将会调用构造函数，然后创建并返回一个 ReactComponent。
 
 ```javascript
-var component = React.render(element, document.body);
+var component = ReactDOM.render(element, document.body);
 ```
-如果一直用相同的 ReactElement 类型和相同的 DOM 元素容器调用 React.render，将会总是返回相同的实例。该实例是状态化的。
+如果一直用相同的 ReactElement 类型和相同的 DOM 元素容器调用 ReactDOM.render，将会总是返回相同的实例。该实例是状态化的。
 ```javascript
 var componentA = React.render(<MyComponent />, document.body);
 var componentB = React.render(<MyComponent />, document.body);
 componentA === componentB; // true
 ```
 这就是为什么不应该创建你自己的实例。相反，在创建之前，ReactElement 是一个虚拟的 ReactComponent。
-
-新旧 ReactElement 可以比对，从而决定是创建一个新的 ReactComponent 实例还是重用已有的实例。
 
 ReactComponent 的 render 方法应该返回另一个 ReactElement，这就允许组件被组装。
 
