@@ -11,7 +11,7 @@ var HelloWorld = React.createClass({
         }
       });
 ```
-## jsx语法中的xml段，都会被编译为React.createElement
+
 ```javascript
 setInterval(function() {
   React.render(
@@ -20,8 +20,7 @@ setInterval(function() {
   );
 }, 500);
 ```
-
-会被jsx编译为
+## jsx语法中的xml段，都会被编译为React.createElement
 ```javascript
 var HelloWorld = React.createClass({displayName: "HelloWorld",
         render: function() {
