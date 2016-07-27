@@ -12,6 +12,7 @@ var HelloWorld = React.createClass({
       });
       
 setInterval(function() {
+  //ReactDOM.render() 实例化根组件，启动框架，把标记注入到第二个参数指定的原生的 DOM 元素中。
   React.render(
     <HelloWorld date={new Date()} />, //设置HelloWorld元素相关的属性 this.props.date = new Date();
     document.getElementById('example')
