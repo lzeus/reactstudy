@@ -23,7 +23,7 @@ var root = <div></div>;
 
 #### 子元素的创建
 ```javascript
-var child = React.createElement('li', null, 'Text Content');
+var child = React.createElement('li', null, 'Text Content');//这里的'Text Content'是作为子元素存在的
 var root = React.createElement('ul', { className: 'my-list' }, child);
 ReactDOM.render(root, document.body);
 ```
