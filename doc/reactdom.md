@@ -13,7 +13,7 @@ React 中最主要的类型就是 ReactElement。
 
 #### 使用 React.createElement 创建该类型的一个实例。
 ```javascript
-var root = React.createElement('div');
+var root = React.createElement('div',null);
 ```
 #### 使用 React JSX 语法，创建该类型的一个实例。
 所以，如下代码是等价的：
