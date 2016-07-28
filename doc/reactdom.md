@@ -18,10 +18,9 @@ var root = React.createElement('div');
 #### 使用 React JSX 语法，创建该类型的一个实例。
 所以，如下代码是等价的：
 ```javascript
-var root = <ul className="my-list">
-             <li>Text Content</li>
-           </ul>;
+var root = <div></div>;
 ```
+
 #### 子元素的创建
 ```javascript
 var child = React.createElement('li', null, 'Text Content');
