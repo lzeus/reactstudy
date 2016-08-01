@@ -54,6 +54,8 @@ ReactDOM.render(root, document.body);
 
 在使用 React 开发中，可以仅使用 ReactElement 实例，但是，要充分利用 React，就要使用 ReactComponent 来封装状态化的组件。
 
+意义在于，自定义组件的render逻辑，个性化主键的渲染
+
 一个 ReactComponent 类就是一个简单的 JavaScript 类（或者说是“构造函数”）。
 ```javascript
 var MyComponent = React.createClass({
