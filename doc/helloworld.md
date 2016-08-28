@@ -1,4 +1,35 @@
 # react 初体验
+## react html模版
+一个典型的react html页面代码大致如下
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!-- React 的核心库 -->
+    <script src="../build/react.js"></script>
+    <!-- 提供与 DOM 相关的功能 -->
+    <script src="../build/react-dom.js"></script>
+    <!-- 将 JSX 语法转为 JavaScript 语法
+    包括将ES6转换为ES5
+    这一步很消耗时间，
+    实际上线的时候，应该将它放到服务器完成 
+    -->
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <!--
+    React 独有的 JSX 语法，跟 JavaScript 不兼容.
+    凡是使用 JSX 的地方，都要加上 type="text/babel".
+    -->
+    <script type="text/babel">
+      // ** Our code goes here! **
+    </script>
+  </body>
+</html>
+```
+
+
 ## 定义react组件
 ```javascript
 var HelloWorld = React.createClass({
