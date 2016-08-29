@@ -7,7 +7,7 @@ React 中最主要的类型就是 ReactElement。
 ### 与dom元素的区别
 
 它有四个属性：type，props，key 和 ref。它没有方法，并且原型上什么都没有。
-一个 ReactElement 实例是一个轻量的，无状态的，不可变的，虚拟的 DOM 元素 的表示。是一个虚拟 DOM。
+一个 ReactElement 实例是一个轻量的，无状态的，不可变的，是一个虚拟 DOM。
 
 ### ReactElement的创建
 
