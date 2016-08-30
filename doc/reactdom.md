@@ -66,6 +66,10 @@ var MyComponent = React.createClass({
   }
 });
 ```
+### 制定组件注意事项
+- 组件类名首字母必须大写
+- render中只能有一个顶层标签
+
 当该构造函数调用的时候，应该会返回一个对象，该对象至少带有一个 render 方法。该对象指向一个 ReactComponent 实例。
 ```javascript
 var component = new MyComponent(props); // never do this
