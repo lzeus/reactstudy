@@ -52,11 +52,11 @@ API形式如下
 实际上它们创建了一个 ReactElement 实例树。
 （These are used as properties of other ReactElements to represent children. Effectively they create a tree of ReactElements.）
 
-## React 组件
+## 可扩展的 React 组件
 
 在使用 React 开发中，可以仅使用 ReactElement 实例，但是，要充分利用 React，就要使用 ReactComponent 来封装状态化的组件。
 
-意义在于，自定义组件的render逻辑，个性化主键的渲染
+意义在于，自定义组件的render逻辑，制定主键的渲染
 
 一个 ReactComponent 类就是一个简单的 JavaScript 类（或者说是“构造函数”）。
 ```javascript
@@ -90,8 +90,8 @@ var component = ReactDOM.render(element, document.body);
 ```
 如果一直用相同的 ReactElement 类型和相同的 DOM 元素容器调用 ReactDOM.render，将会总是返回相同的实例。该实例是状态化的。
 ```javascript
-var componentA = React.render(<MyComponent />, document.body);
-var componentB = React.render(<MyComponent />, document.body);
+var componentA = ReactDOM.render(<MyComponent />, document.body);
+var componentB = ReactDOM.render(<MyComponent />, document.body);
 componentA === componentB; // true
 ```
 这就是为什么不应该创建你自己的实例。相反，在创建之前，ReactElement 是一个虚拟的 ReactComponent。
