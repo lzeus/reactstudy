@@ -11,23 +11,32 @@ React 中最主要的类型就是 ReactElement。
 
 ### ReactElement的创建
 
-#### 使用 React.createElement 创建该类型的一个实例。
+    有两种方式可以创建ReactElement，且是等效的。
+
+###### 使用 React.createElement
+
 ```javascript
 var root = React.createElement('div',null);
 ```
-#### 使用 React JSX 语法，创建该类型的一个实例。
-所以，如下代码是等价的：
+
+###### 使用 React JSX 语法
+
 ```javascript
 var root = <div></div>;
 ```
 
-#### 子元素的创建
+### ReactElement子元素的创建
+
+###### 使用 React.createElement
+
 ```javascript
 var child = React.createElement('li', null, 'Text Content');//这里的'Text Content'是作为子元素存在的
 var root = React.createElement('ul', { className: 'my-list' }, child);
 ReactDOM.render(root, document.body);
 ```
-下面为jsx形式
+
+###### 使用 React JSX 语法
+
 ```javascript
 var root = <ul className="my-list">
              <li>Text Content</li>
@@ -35,11 +44,15 @@ var root = <ul className="my-list">
 ReactDOM.render(root, document.body);
 ```
 ### ReactElement的渲染
-ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
-API形式如下
-`ReactDOM.render(root, document.body);`
 
-## react Node
+ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
+
+
+```javascript
+ReactDOM.render(root, document.body);
+```
+
+## React Node
 
 一个 ReactNode 可以是：
 - ReactElement
@@ -71,18 +84,24 @@ var MyComponent = React.createClass({
 - render中只能有一个顶层标签
 
 当该构造函数调用的时候，应该会返回一个对象，该对象至少带有一个 render 方法。该对象指向一个 ReactComponent 实例。
+
 ```javascript
 var component = new MyComponent(props); // never do this
 ```
+
 除非为了测试，正常情况下不要自己调用该构造函数。
 
 React 会帮你调用这个函数。
 
 - 把 ReactComponent 类传给 createElement，就会得到一个 ReactElement 实例。
+
+
 ```javascript
 var element = React.createElement(MyComponent);
 ```
+
 - 使用 JSX：
+
 ```javascript
 var element = <MyComponent />;
 ```
